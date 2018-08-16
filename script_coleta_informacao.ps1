@@ -27,7 +27,7 @@ function tb_sql(){
 	#Loop para criação da tabela.
 	foreach($text in $txt){
 		#Separando campos.
-		$text=$text -split ";" | where-object {$_ -notlike ""}
+		$text=$text -split ";" #| where-object {$_ -notlike ""}
 		#Criação da object
 		$tabela=New-Object psobject
 		$tabela | Add-Member -MemberType noteproperty -Name BSID -value $text[0]
@@ -65,7 +65,7 @@ function tb_ssh(){
 	#Loop para criação da tabela.
 	foreach( $text in $texto){
 		#Separando campos.
-		$text=$text -split " " | where-object {$_ -notlike ""}
+		$text=$text -split " " # | where-object {$_ -notlike ""}
 		#Criação da object
 		$tabela2=New-Object psobject
 		$tabela2 | Add-Member -MemberType noteproperty -Name USER -value $text[0]
